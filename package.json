@@ -1,0 +1,31 @@
+{
+  "name": "cientificos",
+  "version": "1.0.0",
+  "description": "SPA application",
+  "main": "index.js",
+  "scripts": {
+    "build:prod": "webpack --config ./webpack.config.js",
+    "build:dev": "webpack-dev-server --config ./webpack.dev.config.js"
+  },
+  "keywords": [
+    "spa",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "@jonuulo",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.10.3",
+    "@babel/plugin-transform-runtime": "7.10.3",
+    "@babel/preset-env": "7.10.3",
+    "babel-loader": "8.1.0",
+    "html-webpack-plugin": "4.3.0",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.10.3"
+  }
+}

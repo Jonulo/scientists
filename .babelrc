@@ -1,0 +1,8 @@
+{
+    "plugins": [
+        "@babel/plugin-transform-runtime" // jala el core de runtime para las async functions
+    ],
+    "presets": [
+        "@babel/preset-env" // da soporte a JS moderno pero no a REACT
+    ]
+}
