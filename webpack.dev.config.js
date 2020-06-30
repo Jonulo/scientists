@@ -1,18 +1,18 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const webpack = require('webpack')
 
 module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
-        publicPath: 'http://localhost:9000',
+        publicPath: 'http://localhost:9001',
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
-        port: 9000,
-        hot: true,
         open: true,
+        port: 9001,
     },
     resolve: {
         extensions: ['.js'],
@@ -25,17 +25,23 @@ module.exports = {
                     loader: 'babel-loader',
                 },
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]    
             }
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin (),
-        new HtmlWebpackPlugin([
+        new HtmlWebpackPlugin(
             {
                 inject: true,
                 template: './public/index.html',
                 filename: './index.html',
             }
-        ])
+        )
     ]
 }
